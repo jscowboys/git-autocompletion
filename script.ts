@@ -1,5 +1,4 @@
-import { exists } from 'https://deno.land/std@0.197.0/fs/mod.ts';
-import { homedir } from 'https://deno.land/std@0.110.0/node/os.ts';
+import { exists, homedir } from './deps.ts';
 
 export async function scriptsDownload() {
   // const dir = 'mkdir -p ~/.zsh';
