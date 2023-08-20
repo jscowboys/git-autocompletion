@@ -1,2 +1,3 @@
-# git-autocompletion-mac
-App that installs git autocompletion for mac OS
+# Git Autocompletion for Mac!
+
+## App that installs git autocompletion for mac OS
