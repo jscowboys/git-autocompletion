@@ -6,8 +6,9 @@ const gitBashUrl =
 const gitCompletionUrl =
   'https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh';
 
-export async function scriptsDownload() {
-  const dir = `${homedir()}/.zsh`;
+const dir = `${homedir()}/.zsh`;
+
+export async function downloadScripts() {
   const dirExists = await exists(dir);
   if (!dirExists) {
     await Deno.mkdir(dir);

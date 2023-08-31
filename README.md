@@ -1,3 +1,7 @@
 # Git Autocompletion for Mac!
 
-## App that installs git autocompletion for mac OS
+# What's for?
+
+## Running
+
+Run `deno run --allow-run main.ts`
