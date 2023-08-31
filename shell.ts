@@ -1,8 +1,5 @@
-import { homedir } from './deps.ts';
-import { exec } from 'https://deno.land/x/exec@0.0.5/mod.ts';
-
-const lines = `# Load Git completion \nzstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash \nfpath=(~/.zsh $fpath) \n \nautoload -Uz compinit && compinit`;
-const reloadShell = 'source ~/.zshrc';
+import { cacheDir, lines } from './constants.ts';
+import { exists, homedir } from './deps.ts';
 
 export async function configureShell() {
   await Deno.writeTextFile(`${homedir()}/.zshrc`, `\n\n${lines}`, {
@@ -10,15 +7,10 @@ export async function configureShell() {
   });
   console.log(`✅ File saved!!`);
 
-  try {
+  const dirExists = await exists(cacheDir);
+  if (dirExists) {
     await Deno.remove(`${homedir()}/.zcompdump`); //Clear out the shell’s autocompletion cache
-  } catch (err) {
-    if (!(err instanceof Deno.errors.NotFound)) {
-      throw err;
-    }
   }
-
-  exec(reloadShell);
 
   console.log(`✅ Shell configured!`);
 }

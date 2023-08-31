@@ -1,11 +1,5 @@
-import { exists, homedir, download } from './deps.ts';
-
-const gitBashUrl =
-  'https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash';
-const gitCompletionUrl =
-  'https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh';
-
-const dir = `${homedir()}/.zsh`;
+import { dir, gitBashUrl, gitCompletionUrl } from './constants.ts';
+import { exists, download } from './deps.ts';
 
 export async function downloadScripts() {
   const dirExists = await exists(dir);
