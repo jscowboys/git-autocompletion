@@ -1,5 +1,4 @@
-import { exists, homedir } from './deps.ts';
-import { download } from 'https://deno.land/x/download@v2.0.2/mod.ts';
+import { exists, homedir, download } from './deps.ts';
 
 const gitBashUrl =
   'https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash';
