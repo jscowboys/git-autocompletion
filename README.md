@@ -1,5 +1,3 @@
-# Git Autocompletion for Mac!
-
 # What's for?
 
 ## Running
