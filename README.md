@@ -12,3 +12,5 @@ then reload your shell and you are good to go!
 ## License MIT
 
 Project License can be found [here](LICENSE.md).
+
+[license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
