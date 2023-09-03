@@ -1,4 +1,7 @@
-# What's for?
+# Git Autocompletion
+
+Great app to install git autocompletion in one simple step!
+inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
 
 ## Running
 
