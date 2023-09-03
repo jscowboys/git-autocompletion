@@ -1,4 +1,4 @@
-# Git Autocompletion
+# Git Autocompletion [![Version][version-badge]][version-link] [![Build Status][workflow-badge]][workflow-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
 
 Great app to install git autocompletion in one simple step!
 inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
