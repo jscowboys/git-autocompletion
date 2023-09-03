@@ -44,7 +44,3 @@ Project License can be found [here](LICENSE.md).
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
 
 ##### [Back to Contents](#contents)
-
-```
-
-```
