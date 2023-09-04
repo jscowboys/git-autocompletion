@@ -3,6 +3,13 @@
     "std/": "https://deno.land/std@0.201.0/"
   },
   "tasks": {
-    "start": "deno run --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com main.ts"
+    "start": "deno run --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com src/main.ts"
+  },
+  "fmt": {
+    "useTabs": true,
+    "semiColons": true,
+    "singleQuote": true,
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"]
   }
 }

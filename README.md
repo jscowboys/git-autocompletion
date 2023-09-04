@@ -18,12 +18,14 @@ inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
 
 _git autocompletion_ downloads two scripts from github
 
-- A git completion script: `https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash`
-- And a zsh completion wrapper for git `https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh`
+- A git completion script:
+  `https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash`
+- And a zsh completion wrapper for git
+  `https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh`
 
-Once this two files are downloaded in your homedir, a new `.zshrc` will be created
-(in case of non existance, if not some lines will get appended), and then
-it will proceed to clear out the shell’s autocompletion cache.
+Once this two files are downloaded in your homedir, a new `.zshrc` will be
+created (in case of non existance, if not some lines will get appended), and
+then it will proceed to clear out the shell’s autocompletion cache.
 
 After that, you can just refresh your terminal and that's it!
 
