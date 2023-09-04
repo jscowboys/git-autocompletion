@@ -25,5 +25,6 @@
     "allowJs": false,
     "lib": ["deno.window"],
     "strict": true
-  }
+  },
+  "lock": "./lock.file"
 }
