@@ -10,6 +10,20 @@
     "semiColons": true,
     "singleQuote": true,
     "include": ["src/"],
-    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"]
+    "exclude": ["src/test/", "data/fixtures/**/*.ts"]
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": ["src/test/", "data/fixtures/**/*.ts"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
+    }
+  },
+  "compilerOptions": {
+    "allowJs": false,
+    "lib": ["deno.window"],
+    "strict": true
   }
 }
