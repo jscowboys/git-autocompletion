@@ -1,5 +1,5 @@
-import { assertEquals } from 'https://deno.land/std@0.201.0/assert/mod.ts';
-import { delay } from 'https://deno.land/std@0.201.0/async/delay.ts';
+import { assertEquals } from 'std/assert/mod.ts';
+import { delay } from 'std/async/delay.ts';
 
 Deno.test('hello world #1', () => {
   const x = 1 + 2;

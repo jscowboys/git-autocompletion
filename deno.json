@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "std/": "https://deno.land/std@0.201.0/"
+  },
+  "tasks": {
+    "start": "deno run --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com main.ts"
+  }
+}
