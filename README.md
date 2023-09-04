@@ -32,7 +32,7 @@ After that, you can just refresh your terminal and that's it!
 Run
 
 ```bash
-deno run start
+deno task start
 ```
 
 then reload your shell and you are good to go!
