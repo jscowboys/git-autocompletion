@@ -8,7 +8,8 @@ inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
 1. [Requirements](#requirements)
 2. [How it works](#how-it-works)
 3. [Command](#command)
-4. [License](#license-mit)
+4. [Permissions](#permissions)
+5. [License](#license-mit)
 
 ## Requirements
 
@@ -38,6 +39,15 @@ deno task start
 ```
 
 then reload your shell and you are good to go!
+
+## Permissions
+
+In order to execute `deno task start`, following permissions will be granted
+
+- `--allow-env=HOME`: Allows `home` environment variable
+- `--allow-read=/Users`: Allows read access to `/Users` folder
+- ` --allow-write=/Users`: Allows write access to `/Users` folder
+- `--allow-net=raw.githubusercontent.com`: Allows network access to `raw.githubusercontent.com` in order to download scripts
 
 ## License MIT
 
