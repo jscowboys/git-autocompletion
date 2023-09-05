@@ -42,7 +42,7 @@ then reload your shell and you are good to go!
 
 ## Permissions
 
-In order to execute `deno task start`, following permissions will be granted
+When executing `deno task start`, following permissions will be granted
 
 - `--allow-env=HOME`: Allows `home` environment variable
 - `--allow-read=/Users`: Allows read access to `/Users` folder
