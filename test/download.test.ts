@@ -4,7 +4,7 @@ import { gitBashUrl, gitCompletionUrl } from '../src/constants.ts';
 
 const dir = `${homedir()}/test`;
 
-Deno.test('test download command', async () => {
+Deno.test('test valid github links & download', async () => {
   try {
     await download(gitBashUrl, { file: '.testGit', dir });
     await download(gitCompletionUrl, { file: '.testGitCompletion', dir });
