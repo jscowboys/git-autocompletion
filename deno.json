@@ -3,7 +3,8 @@
     "std/": "https://deno.land/std@0.201.0/"
   },
   "tasks": {
-    "start": "deno run --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com src/main.ts"
+    "start": "deno run --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com src/main.ts",
+    "test": "deno test --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com"
   },
   "fmt": {
     "useTabs": true,
