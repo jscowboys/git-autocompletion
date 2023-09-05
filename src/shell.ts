@@ -2,23 +2,38 @@ import { cacheDir, lines, autocompletionFlag } from './constants.ts';
 import { exists, homedir } from './deps.ts';
 
 export async function configureShell() {
+  //Checks if autocomplete is already installed
   const autocompletePresent = await autocompleteIsPresent();
   if (autocompletePresent) {
     console.log('Git completion already present! Reload your shell');
-    return;
+    Deno.exit();
   }
 
-  await Deno.writeTextFile(`${homedir()}/.zshrc`, `\n\n${lines}`, {
-    append: true,
-  });
-  console.log(`✅ File saved!!`);
+  //If not, writes autocompletion
+  await writeAutocompletion();
 
-  const dirExists = await exists(cacheDir);
-  if (dirExists) {
-    await Deno.remove(`${homedir()}/.zcompdump`); //Clear out the shell’s autocompletion cache
-  }
+  //Clear out the shell’s autocompletion cache
+  await clearCache();
 
   console.log(`✅ Shell configured!`);
+}
+
+async function clearCache() {
+  const dirExists = await exists(cacheDir);
+  if (dirExists) {
+    await Deno.remove(`${homedir()}/.zcompdump`);
+  }
+}
+
+async function writeAutocompletion() {
+  try {
+    await Deno.writeTextFile(`${homedir()}/.zshrc`, `\n\n${lines}`, {
+      append: true,
+    });
+    console.log(`✅ File saved!!`);
+  } catch (error) {
+    throw error;
+  }
 }
 
 async function autocompleteIsPresent(): Promise<boolean | never> {

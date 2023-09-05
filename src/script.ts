@@ -10,7 +10,7 @@ export async function downloadScripts() {
     await download(gitBashUrl, { file: '.git', dir });
     await download(gitCompletionUrl, { file: '.gitCompletion', dir });
     console.log(`✅ scripts downloaded in folder ${dir}`);
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    throw error;
   }
 }
