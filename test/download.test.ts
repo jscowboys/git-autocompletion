@@ -1,10 +1,10 @@
 import { assertEquals, assertArrayIncludes } from 'std/assert/mod.ts';
-import { download, homedir } from '../src/deps.ts';
+import { download, exists, homedir } from '../src/deps.ts';
 import { gitBashUrl, gitCompletionUrl } from '../src/constants.ts';
 
-const dir = `${homedir()}/test`;
+const dir = `${homedir()}/GitAutocompletion-${new Date().getTime()}/test`;
 
-Deno.test('test valid github links & download', async () => {
+Deno.test('Test valid github links & download', async () => {
   try {
     await download(gitBashUrl, { file: '.testGit', dir });
     await download(gitCompletionUrl, { file: '.testGitCompletion', dir });
@@ -23,5 +23,14 @@ Deno.test('test valid github links & download', async () => {
     console.error(err);
   } finally {
     await Deno.remove(dir, { recursive: true });
+  }
+});
+
+Deno.test('Check exists', async () => {
+  try {
+    const dirExists = await exists(dir);
+    assertEquals(dirExists, false);
+  } catch (err) {
+    console.error(err);
   }
 });
