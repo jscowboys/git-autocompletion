@@ -47,6 +47,6 @@ async function autocompleteIsPresent(): Promise<boolean | never> {
     if (!(error instanceof Deno.errors.NotFound)) {
       throw error;
     }
-    return false;
+    return true;
   }
 }
