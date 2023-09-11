@@ -56,7 +56,6 @@ When executing `deno task start`, following permissions will be granted
 Project License can be found [here](LICENSE.md).
 
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
-
-[coverage-badge]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?branch=main)](https://coveralls.io/github/RisingSquad/git-autocompletion?branch=main
+[coverage-badge]: https://img.shields.io/coverallsCoverage/github/RisingSquad/git-autocompletion?branch=main&style=for-the-badge&labelColor=666&color=0a8&link=https%3A%2F%2Fcoveralls.io%2Frepos%2Fgithub%2FRisingSquad%2Fgit-autocompletion%2Fbadge.svg
 
 ##### [Back to Contents](#contents)
