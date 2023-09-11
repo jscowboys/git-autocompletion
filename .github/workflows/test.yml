@@ -19,6 +19,9 @@ jobs:
       - name: Run tests
         run: deno task test-coverage
 
+      - name: Generate lcov report
+        run: deno task test-generate-lcov
+
       - name: Use Coveralls
         uses: coverallsapp/github-action@master
         with:
