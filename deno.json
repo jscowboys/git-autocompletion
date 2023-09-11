@@ -5,7 +5,7 @@
   "tasks": {
     "start": "deno run --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com src/main.ts",
     "test": "deno test --allow-env=HOME --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com",
-    "test-coverage": "deno test --allow-env=HOME --coverage=cov_profile --allow-read=/Users --allow-write=/Users --allow-net=raw.githubusercontent.com"
+    "test-coverage": "deno test --allow-env=HOME --coverage=cov_profile --allow-read --allow-write --allow-net=raw.githubusercontent.com"
   },
   "fmt": {
     "useTabs": true,
