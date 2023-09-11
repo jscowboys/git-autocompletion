@@ -1,5 +1,7 @@
 # 📣 Git Autocompletion
 
+<a href='https://coveralls.io/github/RisingSquad/git-autocompletion?branch=main'><img src='https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?branch=main' alt='Coverage Status' /></a>
+
 ![MIT License][license-badge] ![Coverage Status][coverage-badge]
 
 _Git Autocompletion_ allows you to install git autocomplete in one simple step!,
