@@ -1,8 +1,9 @@
 # 📣 Git Autocompletion
 
-<a href='https://coveralls.io/github/RisingSquad/git-autocompletion?branch=main'><img src='https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?branch=main' alt='Coverage Status' /></a>
+![MIT License][license-badge]
+![Test][test]
 
-![MIT License][license-badge] ![Coverage Status][coverage-badge]
+![Coverage Status][coverage-badge]
 
 _Git Autocompletion_ allows you to install git autocomplete in one simple step!,
 inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
@@ -59,5 +60,6 @@ Project License can be found [here](LICENSE.md).
 
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
 [coverage-badge]: https://img.shields.io/coverallsCoverage/github/RisingSquad/git-autocompletion?branch=main&style=for-the-badge&labelColor=666&color=0a8&link=https%3A%2F%2Fcoveralls.io%2Frepos%2Fgithub%2FRisingSquad%2Fgit-autocompletion%2Fbadge.svg
+[test]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?branch=main
 
 ##### [Back to Contents](#contents)
