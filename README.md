@@ -1,4 +1,7 @@
-# Git Autocompletion [![MIT License][license-badge]](LICENSE.md)
+# Git Autocompletion
+
+[![MIT License][license-badge]](LICENSE.md)
+[![Coverage Status](coverage-badge)
 
 _Git Autocompletion_ allows you to install git autocomplete in one simple step!,
 inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
@@ -54,5 +57,7 @@ When executing `deno task start`, following permissions will be granted
 Project License can be found [here](LICENSE.md).
 
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
+
+[coverage-badge]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?branch=main)](https://coveralls.io/github/RisingSquad/git-autocompletion?branch=main
 
 ##### [Back to Contents](#contents)
