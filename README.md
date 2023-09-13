@@ -66,6 +66,4 @@ Project License can be found [here](LICENSE.md).
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
 [coverage-badge]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?
 
-branch=main
-
 ##### [Back to Contents](#contents)
