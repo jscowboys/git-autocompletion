@@ -1,4 +1,6 @@
-<img id="logo" alt="Github Autocompletion" src="./public/github.png" height="128" />
+<p align="center">
+  <img id="logo" alt="Github Autocompletion" src="./public/github.png" height="128" />
+</p>
 
 # 📣 Git Autocompletion
 
