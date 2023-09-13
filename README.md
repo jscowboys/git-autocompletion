@@ -1,3 +1,5 @@
+<img id="logo" alt="Github Autocompletion" src="./public/github.png" height="128" />
+
 # 📣 Git Autocompletion
 
 ![MIT License][license-badge]
