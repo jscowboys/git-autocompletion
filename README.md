@@ -52,11 +52,20 @@ When executing `deno task start`, following permissions will be granted
 - ` --allow-write=/Users`: Allows write access to `/Users` folder
 - `--allow-net=raw.githubusercontent.com`: Allows network access to `raw.githubusercontent.com` in order to download scripts
 
+## Useful links
+
+- ⏳ [Changelog][changelog]: List of changes between versions.
+- ✅ [Tests Coverage][coverage]: Coveralls page with tests coverage.
+
 ## License MIT
 
 Project License can be found [here](LICENSE.md).
 
+[changelog]: https://github.com/RisingSquad/git-autocompletion/blob/main/CHANGELOG.md
+[coverage]: https://coveralls.io/github/RisingSquad/git-autocompletion
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
-[coverage-badge]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?branch=main
+[coverage-badge]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?
+
+branch=main
 
 ##### [Back to Contents](#contents)
