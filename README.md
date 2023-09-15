@@ -7,7 +7,7 @@
 ![MIT License][license-badge]
 ![Coverage Status][coverage-badge]
 <a>
-<img src=[build-status] alt="Build Status">
+<img src="https://img.shields.io/github/actions/workflow/status/RisingSquad/git-autocompletion/deno.yml?branch=main&style=flat-square" alt="Build Status">
 </a>
 
 _Git Autocompletion_ allows you to install git autocomplete in one simple step!,
@@ -72,6 +72,5 @@ Project License can be found [here](LICENSE.md).
 [coverage]: https://coveralls.io/github/RisingSquad/git-autocompletion
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
 [coverage-badge]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?
-[build-status]: https://img.shields.io/github/actions/workflow/status/RisingSquad/git-autocompletion/deno.yml?branch=main&style=flat-square
 
 ##### [Back to Contents](#contents)
