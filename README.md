@@ -6,7 +6,9 @@
 
 ![MIT License][license-badge]
 ![Coverage Status][coverage-badge]
-<img src=[build-status] alt="Build Status"/>
+<a>
+<img src="https://img.shields.io/github/actions/workflow/status/RisingSquad/git-autocompletion/deno.yml?branch=main&style=flat-square" alt="Build Status">
+</a>
 
 _Git Autocompletion_ allows you to install git autocomplete in one simple step!,
 inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
