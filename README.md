@@ -6,7 +6,6 @@
 
 <p align="center">
   ![MIT License][license-badge]
-  ![Build Status]<img src = [build-status]/>
   ![Coverage Status][coverage-badge]
 </p>
 
