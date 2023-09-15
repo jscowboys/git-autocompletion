@@ -6,6 +6,7 @@
 
 ![MIT License][license-badge]
 ![Coverage Status][coverage-badge]
+![Build Status][build-status]
 <a>
 <img src="https://img.shields.io/github/actions/workflow/status/RisingSquad/git-autocompletion/deno.yml?branch=main&style=flat-square" alt="Build Status">
 </a>
@@ -72,5 +73,6 @@ Project License can be found [here](LICENSE.md).
 [coverage]: https://coveralls.io/github/RisingSquad/git-autocompletion
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg
 [coverage-badge]: https://coveralls.io/repos/github/RisingSquad/git-autocompletion/badge.svg?
+[build-status]: https://img.shields.io/github/actions/workflow/status/RisingSquad/git-autocompletion/deno.yml?branch=main&style=flat-square
 
 ##### [Back to Contents](#contents)
