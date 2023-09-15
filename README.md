@@ -4,10 +4,9 @@
 
 # 📣 Git Autocompletion
 
-<p align="center">
-  ![MIT License][license-badge]
-  ![Coverage Status][coverage-badge]
-</p>
+![MIT License][license-badge]
+![Coverage Status][coverage-badge]
+<img src=[build-status] alt="Build Status"/>
 
 _Git Autocompletion_ allows you to install git autocomplete in one simple step!,
 inspired by https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
