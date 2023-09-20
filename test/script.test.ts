@@ -2,7 +2,7 @@ import { assertEquals, assertArrayIncludes } from 'std/assert/mod.ts';
 import { download, exists, homedir } from '../src/deps.ts';
 import { gitBashUrl, gitCompletionUrl } from '../src/constants.ts';
 
-const dir = `${homedir()}/GitAutocompletion-${new Date().getTime()}/test`;
+const dir = `${homedir()}/GitAutocompletion-${new Date().getTime()}`;
 
 Deno.test('Test valid github links & download', async () => {
   try {
