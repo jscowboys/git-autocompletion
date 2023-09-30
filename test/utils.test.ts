@@ -1,8 +1,8 @@
-import { assertEquals, assertArrayIncludes } from 'std/assert/mod.ts';
-import { download, exists, homedir } from '../src/deps.ts';
-import { gitBashUrl, gitCompletionUrl } from '../src/constants.ts';
+Deno.env.set('DENO_ENV', 'test');
 
-const dir = `${homedir()}/GitAutocompletion-${new Date().getTime()}`;
+import { assertEquals, assertArrayIncludes } from 'std/assert/mod.ts';
+import { download, exists } from '../src/deps.ts';
+import { dir, gitBashUrl, gitCompletionUrl } from '../src/constants.ts';
 
 Deno.test('Test valid github links & download', async () => {
   try {
@@ -26,7 +26,7 @@ Deno.test('Test valid github links & download', async () => {
   }
 });
 
-Deno.test('Check exists', async () => {
+Deno.test('Check dir exists', async () => {
   try {
     const dirExists = await exists(dir);
     assertEquals(dirExists, false);
