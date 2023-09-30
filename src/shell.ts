@@ -1,4 +1,4 @@
-import { autocompletionFlag, cacheDir, lines } from './constants.ts';
+import { autocompletionFlag, dir, lines } from './constants.ts';
 import { homedir } from './deps.ts';
 
 export async function configureShell() {
@@ -26,7 +26,7 @@ export async function clearCache() {
 
 export async function writeAutocompletion() {
   try {
-    await Deno.writeTextFile(`${homedir()}/.zshrc`, `\n\n${lines}`, {
+    await Deno.writeTextFile(dir, `\n\n${lines}`, {
       append: true,
     });
     console.log(`✅ File saved!!`);
@@ -37,7 +37,7 @@ export async function writeAutocompletion() {
 
 export async function autocompleteIsPresent(): Promise<boolean | never> {
   try {
-    const file = await Deno.readTextFile(`${homedir()}/.zshrc`);
+    const file = await Deno.readTextFile(dir);
     return file.includes(autocompletionFlag);
   } catch (error) {
     if (!(error instanceof Deno.errors.NotFound)) {

@@ -8,10 +8,12 @@ export const gitBashUrl =
 export const gitCompletionUrl =
   'https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh';
 
-export const dir =
+export const scriptsDir =
   env == 'test'
     ? `${homedir()}/GitAutocompletion-${new Date().getTime()}`
     : `${homedir()}/.zsh`;
+
+export const dir = `${homedir()}/.zshrc`;
 
 export const cacheDir = `${homedir()}/.zcompdump`;
 export const autocompletionFlag = '# Load Git completion';
