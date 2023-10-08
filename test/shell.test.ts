@@ -32,18 +32,20 @@ Deno.test('Checks clearing cache when no file is present', async () => {
 		throw new Deno.errors.NotFound('No file present');
 	});
 	try {
-		await assertRejects(() => clearCache(), Error);
-	} catch (error) {
-		assert(error);
+		const result = await clearCache();
+		assertEquals(result, undefined);
 	} finally {
 		removeStub.restore();
 	}
 });
 
-Deno.test('Checks clearing cache', async () => {
-	const removeStub = stub(Deno, 'remove', async () => Promise.resolve());
+Deno.test('Checks clearing cache when failing', async () => {
+	const removeStub = stub(Deno, 'remove', async () => {
+		throw new Deno.errors.Busy('Busy');
+	});
 	try {
-		await clearCache();
+		const result = await assertRejects(() => clearCache(), Error);
+		assertInstanceOf(result, Deno.errors.Busy);
 	} finally {
 		removeStub.restore();
 	}
