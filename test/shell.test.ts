@@ -1,18 +1,29 @@
-Deno.env.set('DENO_ENV', 'test');
+import './setup.js';
 
 import {
 	assert,
 	assertEquals,
-	assertExists,
 } from 'https://deno.land/std@0.110.0/testing/asserts.ts';
-import { autocompleteIsPresent, configureShell } from '../src/shell.ts';
+import {
+	autocompleteIsPresent,
+	clearCache,
+	configureShell,
+} from '../src/shell.ts';
 import { assertInstanceOf } from 'https://deno.land/std@0.202.0/assert/mod.ts';
 
 Deno.test('ConfigureShell exits if autocomplete is present', async () => {
 	try {
 		await configureShell();
 	} catch (error) {
-		console.log(error, error.name);
+		assert(error);
+		assertEquals(error.name, 'AssertionError');
+	}
+});
+
+Deno.test('Checks clearing cache', async () => {
+	try {
+		await clearCache();
+	} catch (error) {
 		assert(error);
 		assertEquals(error.name, 'AssertionError');
 	}
