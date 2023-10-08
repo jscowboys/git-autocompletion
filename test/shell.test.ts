@@ -27,19 +27,25 @@ Deno.test('ConfigureShell exits if autocomplete is present', async () => {
 	}
 });
 
-Deno.test('Checks clearing cache', async () => {
-	stub(Deno, 'remove', async () => Promise.resolve());
-	await clearCache();
-});
-
 Deno.test('Checks clearing cache when no file is present', async () => {
+	const removeStub = stub(Deno, 'remove', async () => {
+		throw new Deno.errors.NotFound('No file present');
+	});
 	try {
-		stub(Deno, 'remove', async () => {
-			throw new Deno.errors.NotFound('No file present');
-		});
 		await assertRejects(() => clearCache(), Error);
 	} catch (error) {
 		assert(error);
+	} finally {
+		removeStub.restore();
+	}
+});
+
+Deno.test('Checks clearing cache', async () => {
+	const removeStub = stub(Deno, 'remove', async () => Promise.resolve());
+	try {
+		await clearCache();
+	} finally {
+		removeStub.restore();
 	}
 });
 
