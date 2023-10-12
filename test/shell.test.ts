@@ -12,6 +12,7 @@ import {
 	autocompleteIsPresent,
 	clearCache,
 	configureShell,
+	writeAutocompletion,
 } from '../src/shell.ts';
 import {
 	assertInstanceOf,
@@ -24,6 +25,20 @@ Deno.test('ConfigureShell exits if autocomplete is present', async () => {
 	} catch (error) {
 		assert(error);
 		assertEquals(error.name, 'AssertionError');
+	}
+});
+
+Deno.test('Checks writeAutocompletion on error', async () => {
+	const removeStub = stub(
+		Deno,
+		'writeTextFile',
+		async () => await new Promise((resolve) => resolve()),
+	);
+	try {
+		const result = await writeAutocompletion();
+		assertEquals(result, undefined);
+	} finally {
+		removeStub.restore();
 	}
 });
 
