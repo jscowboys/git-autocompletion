@@ -4,10 +4,7 @@ import {
 	assert,
 	assertEquals,
 } from 'https://deno.land/std@0.110.0/testing/asserts.ts';
-import {
-	returnsNext,
-	stub,
-} from 'https://deno.land/std@0.202.0/testing/mock.ts';
+import { stub } from 'https://deno.land/std@0.202.0/testing/mock.ts';
 import {
 	autocompleteIsPresent,
 	clearCache,
