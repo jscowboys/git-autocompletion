@@ -28,7 +28,7 @@ Deno.test('ConfigureShell exits if autocomplete is present', async () => {
 	}
 });
 
-Deno.test('Checks writeAutocompletion on error', async () => {
+Deno.test('Checks writeAutocompletion on success', async () => {
 	const removeStub = stub(
 		Deno,
 		'writeTextFile',
@@ -37,6 +37,20 @@ Deno.test('Checks writeAutocompletion on error', async () => {
 	try {
 		const result = await writeAutocompletion();
 		assertEquals(result, undefined);
+	} finally {
+		removeStub.restore();
+	}
+});
+
+Deno.test('Checks writeAutocompletion on error', async () => {
+	const removeStub = stub(Deno, 'writeTextFile', async () => {
+		throw new Deno.errors.AlreadyExists('File is present');
+	});
+	try {
+		await writeAutocompletion();
+	} catch (error) {
+		assert(error);
+		assertEquals(error.name, 'AlreadyExists');
 	} finally {
 		removeStub.restore();
 	}
