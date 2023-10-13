@@ -15,6 +15,7 @@ import {
 	assertInstanceOf,
 	assertRejects,
 } from 'https://deno.land/std@0.202.0/assert/mod.ts';
+import { resolve } from 'https://deno.land/std@0.110.0/path/win32.ts';
 
 Deno.test('ConfigureShell exits if autocomplete is present', async () => {
 	try {
@@ -78,6 +79,42 @@ Deno.test('Checks clearing cache when failing', async () => {
 });
 
 Deno.test('Autocomplete does not throw errors', async () => {
-	const autocomplete = new Boolean(await autocompleteIsPresent());
-	assertInstanceOf(autocomplete, Boolean);
+	const fileStub = stub(
+		Deno,
+		'readTextFile',
+		async () => new Promise((resolve) => resolve('# Load Git completion')),
+	);
+	try {
+		const autocomplete = await autocompleteIsPresent();
+		assert(autocomplete);
+	} finally {
+		fileStub.restore();
+	}
+});
+
+Deno.test('Autocomplete does return true on NotFound error', async () => {
+	const fileStub = stub(Deno, 'readTextFile', async () => {
+		throw new Deno.errors.NotFound();
+	});
+	try {
+		const result = await autocompleteIsPresent();
+		assert(result);
+	} finally {
+		fileStub.restore();
+	}
+});
+
+Deno.test('Autocomplete does return true on NotFound error', async () => {
+	const fileStub = stub(Deno, 'readTextFile', async () => {
+		throw new Deno.errors.Busy();
+	});
+	try {
+		const result = await autocompleteIsPresent();
+		assert(result);
+	} catch (error) {
+		assert(error);
+		assertEquals(error.name, 'Busy');
+	} finally {
+		fileStub.restore();
+	}
 });
