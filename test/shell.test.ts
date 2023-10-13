@@ -16,6 +16,7 @@ import {
 	assertRejects,
 } from 'https://deno.land/std@0.202.0/assert/mod.ts';
 import { resolve } from 'https://deno.land/std@0.110.0/path/win32.ts';
+import { homedir } from '../src/deps.ts';
 
 Deno.test('ConfigureShell exits if autocomplete is present', async () => {
 	try {
@@ -55,7 +56,11 @@ Deno.test('Checks writeAutocompletion on error', async () => {
 });
 
 Deno.test('Checks clearing cache ', async () => {
-	const result = await clearCache();
+	const dir = `${homedir()}/test.txt`;
+	const encoder = new TextEncoder();
+	const data = encoder.encode('Hello world\n');
+	await Deno.writeFile(dir, data, {});
+	const result = await clearCache(dir);
 	assertEquals(result, undefined);
 });
 

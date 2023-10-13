@@ -18,10 +18,7 @@ export const dir =
 		? `${homedir()}/GitAutocompletion/.zshrc`
 		: `${homedir()}/.zshrc`;
 
-export const cacheDir =
-	env == 'test'
-		? `${homedir()}/GitAutocompletion/.zcompdump`
-		: `${homedir()}/.zcompdump`;
+export const cacheDir = `${homedir()}/.zcompdump`;
 
 export const autocompletionFlag = '# Load Git completion';
 

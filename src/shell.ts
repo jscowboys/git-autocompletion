@@ -14,9 +14,9 @@ export async function configureShell() {
 	console.log(`✅ Shell configured!`);
 }
 
-export async function clearCache() {
+export async function clearCache(cache = cacheDir) {
 	try {
-		await Deno.remove(cacheDir);
+		await Deno.remove(cache);
 	} catch (error) {
 		if (!(error instanceof Deno.errors.NotFound)) {
 			throw error;
