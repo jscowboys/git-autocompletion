@@ -2,11 +2,11 @@ import { gitBashUrl, gitCompletionUrl, scriptsDir } from './constants.ts';
 import { download, exists } from './deps.ts';
 
 export async function downloadScripts() {
-	const dirExists = await exists(scriptsDir);
-	if (!dirExists) {
-		await Deno.mkdir(scriptsDir);
-	}
 	try {
+		const dirExists = await exists(scriptsDir);
+		if (!dirExists) {
+			await Deno.mkdir(scriptsDir);
+		}
 		await download(gitBashUrl, { file: '.git', dir: scriptsDir });
 		await download(gitCompletionUrl, {
 			file: '.gitCompletion',
