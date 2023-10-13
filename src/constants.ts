@@ -13,10 +13,7 @@ export const scriptsDir =
 		? `${homedir()}/GitAutocompletion-${new Date().getTime()}`
 		: `${homedir()}/.zsh`;
 
-export const dir =
-	env == 'test'
-		? `${homedir()}/GitAutocompletion/.zshrc`
-		: `${homedir()}/.zshrc`;
+export const dir = `${homedir()}/.zshrc`;
 
 export const cacheDir = `${homedir()}/.zcompdump`;
 

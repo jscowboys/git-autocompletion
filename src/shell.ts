@@ -1,22 +1,21 @@
 import { autocompletionFlag, cacheDir, dir, lines } from './constants.ts';
-import { homedir } from './deps.ts';
 
-export async function configureShell() {
-	const autocompletePresent = await autocompleteIsPresent(); //Checks if autocomplete is already installed
+export async function configureShell(path = dir, cachePath = cacheDir) {
+	const autocompletePresent = await autocompleteIsPresent(path); //Checks if autocomplete is already installed
 	if (autocompletePresent) {
-		console.log('Git completion already present! Reload your shell');
+		console.log('✅ Git completion already present! Reload your shell');
 		Deno.exit();
 	}
 
-	await writeAutocompletion(); //If not, writes autocompletion
-	await clearCache(); //Clear out the shell’s autocompletion cache
+	await writeAutocompletion(path); //If not, writes autocompletion
+	await clearCache(cachePath); //Clear out the shell’s autocompletion cache
 
 	console.log(`✅ Shell configured!`);
 }
 
-export async function clearCache(cache = cacheDir) {
+export async function clearCache(dir: string) {
 	try {
-		await Deno.remove(cache);
+		await Deno.remove(dir);
 	} catch (error) {
 		if (!(error instanceof Deno.errors.NotFound)) {
 			throw error;
@@ -24,9 +23,9 @@ export async function clearCache(cache = cacheDir) {
 	}
 }
 
-export async function writeAutocompletion() {
+export async function writeAutocompletion(path: string) {
 	try {
-		await Deno.writeTextFile(dir, `\n\n${lines}`, {
+		await Deno.writeTextFile(path, `\n\n${lines}`, {
 			append: true,
 		});
 		console.log(`✅ File saved!!`);
@@ -35,14 +34,16 @@ export async function writeAutocompletion() {
 	}
 }
 
-export async function autocompleteIsPresent(): Promise<boolean | never> {
+export async function autocompleteIsPresent(
+	path: string,
+): Promise<boolean | never> {
 	try {
-		const file = await Deno.readTextFile(dir);
+		const file = await Deno.readTextFile(path);
 		return file.includes(autocompletionFlag);
 	} catch (error) {
 		if (!(error instanceof Deno.errors.NotFound)) {
 			throw error;
 		}
-		return true;
+		return false;
 	}
 }
