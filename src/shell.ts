@@ -2,7 +2,6 @@ import { autocompletionFlag, cacheDir, dir, lines } from './constants.ts';
 
 export async function configureShell(path = dir, cachePath = cacheDir) {
 	const autocompletePresent = await autocompleteIsPresent(path); //Checks if autocomplete is already installed
-	console.log(autocompletePresent, path);
 	if (autocompletePresent) {
 		console.log('✅ Git completion already present! Reload your shell');
 		Deno.exit();
