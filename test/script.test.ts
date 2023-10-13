@@ -2,8 +2,6 @@ import './setup.js';
 
 import { stub } from 'https://deno.land/std@0.202.0/testing/mock.ts';
 
-import { exists } from '../src/deps.ts';
-
 import {
 	assert,
 	assertArrayIncludes,
