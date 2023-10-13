@@ -16,6 +16,9 @@ export const cacheDir = `${homedir()}/.zcompdump`;
 
 export const autocompletionFlag = '# Load Git completion';
 
-const copyright = `# Copyright (C) ${new Date().getFullYear()} Nicolás Battaglia <nbattaglia@gmail.com>`;
+const copyright = `# Copyright (C) ${
+	new Date().getFullYear()
+} Nicolás Battaglia <nbattaglia@gmail.com>`;
 
-export const lines = `${autocompletionFlag} \n# \n${copyright}\n\nzstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash \nfpath=(~/.zsh $fpath) \n \nautoload -Uz compinit && compinit`;
+export const lines =
+	`${autocompletionFlag} \n# \n${copyright}\n\nzstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash \nfpath=(~/.zsh $fpath) \n \nautoload -Uz compinit && compinit`;
