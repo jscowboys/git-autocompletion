@@ -54,6 +54,11 @@ Deno.test('Checks writeAutocompletion on error', async () => {
 	}
 });
 
+Deno.test('Checks clearing cache ', async () => {
+	const result = await clearCache();
+	assertEquals(result, undefined);
+});
+
 Deno.test('Checks clearing cache when no file is present', async () => {
 	const removeStub = stub(Deno, 'remove', async () => {
 		throw new Deno.errors.NotFound('No file present');

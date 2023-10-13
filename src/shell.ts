@@ -1,4 +1,4 @@
-import { autocompletionFlag, dir, lines } from './constants.ts';
+import { autocompletionFlag, cacheDir, dir, lines } from './constants.ts';
 import { homedir } from './deps.ts';
 
 export async function configureShell() {
@@ -16,7 +16,7 @@ export async function configureShell() {
 
 export async function clearCache() {
 	try {
-		await Deno.remove(`${homedir()}/.zcompdump`);
+		await Deno.remove(cacheDir);
 	} catch (error) {
 		if (!(error instanceof Deno.errors.NotFound)) {
 			throw error;
