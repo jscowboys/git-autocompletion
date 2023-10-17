@@ -11,11 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.1.0] - 2023-09-5
 
-## [1.0.0] - 2023-09-3
-
 Add changelog
 
-## [1.0.0] - 2023-09-13
+## [1.0.0] - 2023-09-3
 
 First version
 
