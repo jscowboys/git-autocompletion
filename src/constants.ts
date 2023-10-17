@@ -1,5 +1,3 @@
-const env = Deno.env.get('DENO_ENV');
-
 import { homedir } from './deps.ts';
 
 export const gitBashUrl =
