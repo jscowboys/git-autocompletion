@@ -1,3 +1,4 @@
 .vscode/*
 .prettierrc
 coverage
+node_modules
